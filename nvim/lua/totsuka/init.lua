@@ -1,5 +1,0 @@
-require('totsuka.options')
-require('totsuka.functions')
-require('totsuka.keybinds')
-require('totsuka.plugins')
-require('totsuka.lsp')

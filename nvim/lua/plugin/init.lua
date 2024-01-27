@@ -1,7 +1,0 @@
-require('plugin.treesitter')
-require('plugin.telescope')
-require('plugin.colorizer')
-require('plugin.fugitive')
-require('plugin.undotree')
-require('plugin.black')
--- require('plugin.indentblankline')
