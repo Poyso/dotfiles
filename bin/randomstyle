@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wall=$(find ~/wall/ -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
+
+feh --bg-fill $wall
+wal -c 
+wal -i $wall
+xdotool key 133+71 # super+F5

@@ -1,0 +1,7 @@
+#!/bin/sh
+# Display RAM usage.
+
+used_mib="$(free --mebi | grep '^Mem:' | tr -s ' ' | cut -d' ' -f3)"
+used_gib="$(echo "scale=2; $used_mib / 1024" | bc)"
+
+printf "%.2f G" "$used_gib"

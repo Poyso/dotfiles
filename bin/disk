@@ -1,0 +1,7 @@
+#!/bin/sh
+path="/"
+
+used_bytes="$(df --output=avail "$path" | tail -n 1)"
+used_gibs="$(echo "scale=1; $used_bytes / 1024 / 1024" | bc)"
+
+printf "%.1f G" "$used_gibs"
