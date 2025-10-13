@@ -1,15 +1,26 @@
-//Modify this file to change what commands output to your statusbar, and recompile using the make command.
-static const Block blocks[] = {
+#ifndef CONFIG_H
+#define CONFIG_H
 
-/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-  {"",  "sb-disk",  60, 1},
-  {"",  "sb-memory", 5,  4},
-  {"",  "sb-volume", 1,  10},
-  {"",  "sb-forecast", 5,  4},
-  {"",  "sb-clock",  60, 1},
-  {"",  "sb-internet", 5,  4},
-};
+// String used to delimit block outputs in the status.
+#define DELIMITER " 󰝠 "
 
-//sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char delim[] = " | ";
-static unsigned int delimLen = 5;
+// Maximum number of Unicode characters that a block can output.
+#define MAX_BLOCK_OUTPUT_LENGTH 45
+
+// Control whether blocks are clickable.
+#define CLICKABLE_BLOCKS 0
+
+// Control whether a leading delimiter should be prepended to the status.
+#define LEADING_DELIMITER 0
+
+// Control whether a trailing delimiter should be appended to the status.
+#define TRAILING_DELIMITER 0
+
+// Define blocks for the status feed as X(icon, cmd, interval, signal).
+#define BLOCKS(X)                                                              \
+    X(" 󰝚 ", "music", 0, 2)                                                 \
+    X(" 󰋊 ", "disk", 1800, 3)                                               \
+    X("  ", "ram", 10, 4)                                                   \
+    X("  ", "cut -d' ' -f1 /proc/loadavg", 5, 5)                            \
+    X(" 󰥔 ", "date '+%D ,%H:%M'", 1, 1)
+#endif // CONFIG_H
