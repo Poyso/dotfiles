@@ -18,7 +18,7 @@
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)                                                              \
-    X(" 󰝚 ", "music", 0, 2)                                                 \
+    X(" 󰝚 ", "music", 1, 2)                                                 \
     X(" 󰋊 ", "disk", 1800, 3)                                               \
     X("  ", "ram", 10, 4)                                                   \
     X("  ", "cut -d' ' -f1 /proc/loadavg", 5, 5)                            \
